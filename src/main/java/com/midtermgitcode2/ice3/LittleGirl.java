@@ -10,7 +10,8 @@ public class LittleGirl {
         public LittleGirl(Client[] clients) {
             this.clients = clients;
         }
-        
+
+	// Called by Bakery when bread is ready
 	public void breadReady() {
             if (clients.length == 0) return;
 
@@ -18,9 +19,11 @@ public class LittleGirl {
             System.out.println("******* delivered bread to " + client.getName());
             client.breadReady();
 
+			// Move to the next client (loop around)
             nextClient = (nextClient + 1) % clients.length;
 	}
 
+	// Run a background thread where clients do their activities
 	public void startClientActivities() {
 	        new Thread(() -> {
                     Random rand = new Random();
