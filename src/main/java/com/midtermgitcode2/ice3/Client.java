@@ -11,6 +11,7 @@ public class Client {
             this.name = name;
         }
 
+	// Randomly choose an activity
 	public void doActivity() {
             String[] activities = {
                 "cleaning the barn",
