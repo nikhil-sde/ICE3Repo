@@ -14,11 +14,13 @@ public class Bakery {
 	public void run() {
             while (true) {
                 try {
+					// Bake bread at random intervals (1–10 seconds)
                     Thread.sleep((1 + rand.nextInt(10)) * 1000);
                 } catch (InterruptedException e) {
                     System.out.println("Exception happened: " + e.getMessage());
                 }
 
+				// When bread is ready, notify the LittleGirl
                 littleGirl.breadReady();
             }
 	}
