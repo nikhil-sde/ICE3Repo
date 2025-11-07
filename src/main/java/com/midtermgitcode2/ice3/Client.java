@@ -6,19 +6,28 @@ public class Client {
 
 	private String name;
 	private Random rand = new Random();
+        
+        public Client(String name) {
+            this.name = name;
+        }
 
 	public void doActivity() {
-		// TODO - implement Client.doActivity
-		throw new UnsupportedOperationException();
+            String[] activities = {
+                "cleaning the barn",
+                "walking the animals",
+                "washing his truck",
+                "churning butter",
+                "and Paula line dancing"
+            };
+            System.out.println(name + " " + activities[rand.nextInt(activities.length)] + ".");
 	}
 
 	public void breadReady() {
-		// TODO - implement Client.breadReady
-		throw new UnsupportedOperationException();
+            System.out.println(name + " received his bread.");
 	}
 
 	public String getName() {
-		return this.name;
+            return this.name;
 	}
 
 }
